@@ -1,8 +1,4 @@
 nginx: 
   service:
     type: ClusterIP
-    annotations:
-      oci.oraclecloud.com/load-balancer-type: "nlb"
-      oci-network-load-balancer.oraclecloud.com/internal: "false"
-      oci-network-load-balancer.oraclecloud.com/subnet: "ocid....."
   replicaCount: 1
