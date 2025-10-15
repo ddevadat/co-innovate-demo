@@ -1,0 +1,10 @@
+apiVersion: v2
+name: nginx-chart
+description: A Helm chart that wraps Bitnami’s Nginx
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+dependencies:
+  - name: nginx
+    version: 15.16.0
+    repository: https://charts.bitnami.com/bitnami
