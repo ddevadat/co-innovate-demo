@@ -1,4 +1,4 @@
 nginx: 
   service:
     type: ClusterIP
-  replicaCount: 0
+  replicaCount: 1
