@@ -53,18 +53,9 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/default/addons/{{values.addonChart}}/values.yaml
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
-              global:
-                domain: argocd-beckn.{{metadata.annotations.domain}}
               configs:
                 secret:
                   argocdServerAdminPassword: {{metadata.annotations.argocd_admin_password}}
-              server:
-                ingress:
-                  enabled: {{metadata.annotations.create_ingress}}
-                  annotations:
-                    cert-manager.io/cluster-issuer: "{{ metadata.annotations.certificate_issuer }}"
-                    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-                    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
