@@ -52,10 +52,10 @@ spec:
             valueFiles:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/default/addons/{{values.addonChart}}/values.yaml
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
-            # values: |
-            #   configs:
-            #     secret:
-            #       argocdServerAdminPassword: {{metadata.annotations.argocd_admin_password}}
+            values: |
+              configs:
+                secret:
+                  argocdServerAdminPassword: {{metadata.annotations.argocd_admin_password}}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
